@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>vultr + ss 科学上网 | Yunng</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + 'a11bcd1e6aa9ce500500990d7a765f20';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+  </script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">vultr + ss 科学上网</h1><a id="logo" href="/.">Yunng</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">vultr + ss 科学上网</h1><div class="post-meta">Jul 9, 2018<span> | </span><span class="category"><a href="/categories/基础/">基础</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a class="disqus-comment-count" href="/2018/07/09/vultr_ss/#vcomment"><span class="valine-comment-count" data-xid="/2018/07/09/vultr_ss/"></span><span> 条评论</span></a><div class="post-content"><p>关于科学上网,顾名思义,就是能够科学的上国外网站,其实说得简单一点就是,国外的许多站点在国内是不能正常访问的,比如google,youtube,facebook。网络上充斥了大量的免费翻墙工具，这类工具的免费版往往会有许多的广告，并且速度不可控，时好时坏。俗话说得好，自己动手丰衣足食，利用vultr + ss进行科学上网，是通过一台非中国大陆内的云主机配合Shadowsocks的服务端，形成一个稳定而且快速的梯子，从而可以使用本地的Shadowsocks客户端通过云主机的代理，畅游墙外的世界！</p>
+<a id="more"></a>
+<h3 id="1、创建云主机"><a href="#1、创建云主机" class="headerlink" title="1、创建云主机"></a>1、创建云主机</h3><p>创建过程只要包括如下几个步骤：</p>
+<ol>
+<li><p>通过<a href="https://www.vultr.com/?ref=7467626" target="_blank" rel="noopener">vultr</a>进行注册，如图1所示，我们可以点击<strong>Create Account</strong>进入注册页面，输入邮箱和密码，然后在邮箱中找到验证邮件，点击验证链接，从而完成注册。<br><img src="http://7xtore.com1.z0.glb.clouddn.com/1.png" alt="图1 注册"></p>
+</li>
+<li><p>完成注册后，需要首先充值10美元才能创建自己的云主机，可以在网站中点击左侧的<strong>Billing</strong>进入充值页面，该平台支持国内的支付宝支付，非常的方便。同时还可以通过信用卡等支付，甚至还支持比特币，如图2所示。<br><img src="http://7xtore.com1.z0.glb.clouddn.com/2.png" alt="图2 充值"></p>
+</li>
+<li><p>至此，我们可以开始着手创建自己的云主机了，同样通过点击左侧的<strong>Servers</strong>，进入服务器管理页面，点击右上角的加好进行创建，如图3所示。<br><img src="http://7xtore.com1.z0.glb.clouddn.com/3.png" alt="图3 创建云主机"></p>
+</li>
+<li><p>进入创建页面后，选择第一个<strong>Vultr Cloud Compute(CV2)</strong>，进行创建，首先需要选择服务位置，东京、洛杉矶等等都可，如图4所示。<br><img src="http://7xtore.com1.z0.glb.clouddn.com/4.png" alt="图4 创建配置"></p>
+</li>
+<li><p>选择服务器系统类型以及服务器的配置，根据个人喜好进行选择，注意不要选择$2.5/mo的，这个只支持IPv6，如图5所示。<br><img src="http://7xtore.com1.z0.glb.clouddn.com/5.png" alt="图5 服务器配置"></p>
+</li>
+<li><p>如果想要该云主机支持Ipv6的话，需要在<strong>Additional Features</strong>中勾选Ipv6（反正又不要钱），如图6所示。<br><img src="http://7xtore.com1.z0.glb.clouddn.com/6.png" alt="图6 服务器配置"></p>
+</li>
+<li><p>完成如上配置后，可以直接点击右下角的<strong>Deploy Now</strong>来创建云主机，从而进入图7，慢慢等待它初始化好就可以了。<br><img src="http://7xtore.com1.z0.glb.clouddn.com/7.png" alt="图7 发布成功"></p>
+</li>
+</ol>
+<h3 id="2、安装与配置ss服务端"><a href="#2、安装与配置ss服务端" class="headerlink" title="2、安装与配置ss服务端"></a>2、安装与配置ss服务端</h3><p>完成云主机的创建后，这时就需要登录云主机，从而配置我们的Shadowsocks的服务端。首先通过图7进入云主机的详细信息页面，里边指明了该机器的<strong>IP Address</strong>，登录所需要的用户名和密码。（Mac或者Linux用户可以直接通过ssh进行登录，windows用户可以通过<a href="https://www.netsarang.com/download/down_xsh6.html?token=TmVDeGF4a2hxSk16STdTZW9zRXN2d0B0OCsrd3FGMzg0K28reFRMcWd1c0Z3" target="_blank" rel="noopener">Xshell</a>进行登录）。</p>
+<ol>
+<li>登录成功后通过如命令安装python、pip、一些依赖以及Shadowsocks环境<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get install python</span><br><span class="line">apt-get install -y python-gevent python-setuptools python-pip python-m2crypto</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>安装Shadowsocks过程中，可能会遇到编码的错误，可以通过如下命令进行修复，完成安装后，会有<strong>Successfully Installed shadowsocks</strong>的字样。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export LANGUAGE=en_US.UTF-8</span><br><span class="line">export LC_ALL=en_US.UTF-8</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>完成安装后需要对ss服务端进行配置，操作过程如下：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /root</span><br><span class="line">mkdir shadowsocks</span><br><span class="line">cd shadowsocks/</span><br><span class="line">vi ss.json</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>进入ss.json文件的编辑（<a href="http://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener">vi命令可参考</a>），输入我们服务器的配置如下：其中server是VPS的地址，填成这样可以同时支持Ipv4和ipv6；server_port和local_port分别表示服务端和客户端的端口配置；password就是所谓的密码；timeout是超时设置；method是加密方式，aes-256-cfb比较常用，也可以配置其他的。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"server"</span>:<span class="string">"::"</span>,</span><br><span class="line"><span class="attr">"server_port"</span>:<span class="number">1024</span>,</span><br><span class="line"><span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line"><span class="attr">"password"</span>:<span class="string">"1029202019"</span>,</span><br><span class="line"><span class="attr">"timeout"</span>:<span class="number">600</span>,</span><br><span class="line"><span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>将ss启动添加到开机自启动，在终端输入如下命令<code>vi /etc/rc.local</code>，进入编辑模式后输入<code>/usr/local/bin/ssserver -c /root/shadowsocks/ss.json</code>，然后重启<code>reboot</code>。</li>
+</ol>
+<h3 id="3、配置ss客户端"><a href="#3、配置ss客户端" class="headerlink" title="3、配置ss客户端"></a>3、配置ss客户端</h3><p>至此，我们服务端的云主机以及配置完成，就需要通过ss客户端来访问我们刚才配置好的服务器，从而跳过墙。<br>Shadowsocks的客户端下载地址如下：</p>
+<blockquote>
+<p><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">windows</a><br><a href="https://github.com/yangfeicheung/Shadowsocks-X/releases" target="_blank" rel="noopener">Mac</a><br><a href="https://github.com/shadowsocks/shadowsocks-android/releases" target="_blank" rel="noopener">Android</a></p>
+</blockquote>
+<p>具体配置如图8所示<br><img src="http://7xtore.com1.z0.glb.clouddn.com/8.png" alt="图8 客户端配置"></p>
+<h3 id="4、畅游世界"><a href="#4、畅游世界" class="headerlink" title="4、畅游世界"></a>4、畅游世界</h3><p>熟练的打开<a href="https://www.youtube.com/" target="_blank" rel="noopener">Youtube</a>，enjoy！！<br><img src="http://7xtore.com1.z0.glb.clouddn.com/10.png" alt=""></p>
+</div><div class="tags"><a href="/tags/vultr/">vultr</a><a href="/tags/科学上网/">科学上网</a></div><div class="post-nav"><a class="next" href="/2017/03/11/hello-world/">Hello World</a></div><div id="vcomment"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
+var verify = 'false' == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'zetq9lvtLi5PEGpR5Fo3BnCu-gzGzoHsz',
+  appKey:'VqRePctEls85XL63GQlwY9Nx',
+  placeholder:'Hello',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'10'
+})</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/基础/">基础</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/vultr/" style="font-size: 15px;">vultr</a> <a href="/tags/科学上网/" style="font-size: 15px;">科学上网</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/09/vultr_ss/">vultr + ss 科学上网</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/11/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">Yunng.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
