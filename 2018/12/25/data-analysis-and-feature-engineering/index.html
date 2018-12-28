@@ -104,20 +104,26 @@
 
 
 
-  <meta name="description" content="本文数据来源自Kaggle竞赛中的titanic预测是否幸存的例子。Titnaic 数据预处理整个数据处理过程均使用python中的Pandas库 大致了解数据集加载数据使用read_csv加载csv格式的数据1df = pd.read_csv(&apos;./data/titanic/train.csv&apos;)">
+  <meta name="description" content="本文数据来源自Kaggle竞赛中的titanic预测是否幸存的例子。Titnaic  数据预处理整个数据处理过程均使用python中的Pandas库 大致了解数据集加载数据使用read_csv加载csv格式的数据1df = pd.read_csv(&apos;./data/titanic/train.csv&apos;)">
 <meta name="keywords" content="数据处理,特征工程,Pandas">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据分析可视化与特征工程">
 <meta property="og:url" content="http://thinklock.github.io/2018/12/25/data-analysis-and-feature-engineering/index.html">
 <meta property="og:site_name" content="旺仔小馒头">
-<meta property="og:description" content="本文数据来源自Kaggle竞赛中的titanic预测是否幸存的例子。Titnaic 数据预处理整个数据处理过程均使用python中的Pandas库 大致了解数据集加载数据使用read_csv加载csv格式的数据1df = pd.read_csv(&apos;./data/titanic/train.csv&apos;)">
+<meta property="og:description" content="本文数据来源自Kaggle竞赛中的titanic预测是否幸存的例子。Titnaic  数据预处理整个数据处理过程均使用python中的Pandas库 大致了解数据集加载数据使用read_csv加载csv格式的数据1df = pd.read_csv(&apos;./data/titanic/train.csv&apos;)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://pjb2s2j52.bkt.clouddn.com/WX20181227-224226@2x.png">
 <meta property="og:image" content="http://pjb2s2j52.bkt.clouddn.com/WX20181227-224155@2x.png">
-<meta property="og:updated_time" content="2018-12-27T15:57:48.046Z">
+<meta property="og:image" content="http://pjb2s2j52.bkt.clouddn.com/box.png">
+<meta property="og:image" content="http://pjb2s2j52.bkt.clouddn.com/violin.png">
+<meta property="og:image" content="http://pjb2s2j52.bkt.clouddn.com/box_voi_swarm.png">
+<meta property="og:image" content="http://pjb2s2j52.bkt.clouddn.com/ked_age.png">
+<meta property="og:image" content="http://pjb2s2j52.bkt.clouddn.com/ked_fare.png">
+<meta property="og:image" content="http://pjb2s2j52.bkt.clouddn.com/heatmap.png">
+<meta property="og:updated_time" content="2018-12-28T16:17:35.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据分析可视化与特征工程">
-<meta name="twitter:description" content="本文数据来源自Kaggle竞赛中的titanic预测是否幸存的例子。Titnaic 数据预处理整个数据处理过程均使用python中的Pandas库 大致了解数据集加载数据使用read_csv加载csv格式的数据1df = pd.read_csv(&apos;./data/titanic/train.csv&apos;)">
+<meta name="twitter:description" content="本文数据来源自Kaggle竞赛中的titanic预测是否幸存的例子。Titnaic  数据预处理整个数据处理过程均使用python中的Pandas库 大致了解数据集加载数据使用read_csv加载csv格式的数据1df = pd.read_csv(&apos;./data/titanic/train.csv&apos;)">
 <meta name="twitter:image" content="http://pjb2s2j52.bkt.clouddn.com/WX20181227-224226@2x.png">
 
 
@@ -413,7 +419,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-27 23:57:48" itemprop="dateModified" datetime="2018-12-27T23:57:48+08:00">2018-12-27</time>
+                <time title="修改时间：2018-12-29 00:17:35" itemprop="dateModified" datetime="2018-12-29T00:17:35+08:00">2018-12-29</time>
               
             
           </span>
@@ -482,7 +488,8 @@
       
 
       
-        <p>本文数据来源自Kaggle竞赛中的titanic预测是否幸存的例子。<br><a href="https://www.kaggle.com/c/titanic" target="_blank" rel="noopener">Titnaic</a></p>
+        <p align="center">本文数据来源自Kaggle竞赛中的titanic预测是否幸存的例子。<br><a href="https://www.kaggle.com/c/titanic" target="_blank" rel="noopener">Titnaic</a></p>
+
 <h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p>整个数据处理过程均使用python中的Pandas库</p>
 <h4 id="大致了解数据集"><a href="#大致了解数据集" class="headerlink" title="大致了解数据集"></a>大致了解数据集</h4><p>加载数据使用read_csv加载csv格式的数据<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = pd.read_csv(<span class="string">'./data/titanic/train.csv'</span>)</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
@@ -510,7 +517,26 @@
 </ul>
 <p>例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ss = pd.DataFrame([<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>],columns=[<span class="string">'Type'</span>])</span><br><span class="line"><span class="comment"># 	Type</span></span><br><span class="line"><span class="comment"># 0	A</span></span><br><span class="line"><span class="comment"># 1	B</span></span><br><span class="line"><span class="comment"># 2	C</span></span><br><span class="line">ss[<span class="string">'Type'</span>] = lable.fit_transform(ss[<span class="string">'Type'</span>])</span><br><span class="line"><span class="comment"># 	Type</span></span><br><span class="line"><span class="comment"># 0	0</span></span><br><span class="line"><span class="comment"># 1	1</span></span><br><span class="line"><span class="comment"># 2	2</span></span><br><span class="line">sss = pd.get_dummies(ss)</span><br><span class="line"><span class="comment"># 	Type_A	Type_B	Type_C</span></span><br><span class="line"><span class="comment"># 0	1	0	0</span></span><br><span class="line"><span class="comment"># 1	0	1	0</span></span><br><span class="line"><span class="comment"># 2	0	0	1</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="特征工程"><a href="#特征工程" class="headerlink" title="特征工程"></a>特征工程</h3><p>在完成数据清洗、补全、添加、转换等多个步骤后，原始数据已经被处理成即将用来作为模型训练所需的特征。在特征选择的过程中，每个特征与最终预测值之间的关系是衡量这个特征是否有效的标准。为了能够大致选择出特征，将特征之间关系进行可视化，从而得到一个直观的感受。</p>
-<h4 id="可视化工具"><a href="#可视化工具" class="headerlink" title="可视化工具"></a>可视化工具</h4>
+<h4 id="可视化工具"><a href="#可视化工具" class="headerlink" title="可视化工具"></a>可视化工具</h4><p>主要使用Seaborn中的几个画图函数，Seaborn是基于matpltlib封装的高级画图库，可以方便的对离散和连续的数据进行可视化。下边主要使用如下几个画图函数：</p>
+<ul>
+<li><code>barplot()</code> 主要利用矩阵条的高度反映数值变量的集中趋势</li>
+<li><code>pointplot()</code> 点图代表散点图位置的数值变量的中心趋势估计</li>
+<li><code>boxplot()</code> 箱形图，显示一组数据分散情况资料的统计图。它能显示出一组数据的最大值、最小值、中位数及上下四分位数。</li>
+<li><code>violinplot()</code> 琴形图，不像箱形图中所有绘图组件都对应于实际数据点，小提琴绘图以基础分布的核密度估计为特征</li>
+<li><code>kdeplot()</code> </li>
+<li><code>FacetGrid()</code></li>
+</ul>
+<h5 id="箱形图-boxplot"><a href="#箱形图-boxplot" class="headerlink" title="箱形图 boxplot()"></a>箱形图 boxplot()</h5><p><img src="http://pjb2s2j52.bkt.clouddn.com/box.png" width="300" height="300" div="" align="center/"></p>
+<h5 id="琴形图-violinplot"><a href="#琴形图-violinplot" class="headerlink" title="琴形图 violinplot()"></a>琴形图 violinplot()</h5><p><img src="http://pjb2s2j52.bkt.clouddn.com/violin.png" width="300" height="300" div="" align="center/"></p>
+<p>使用以及清洗过的数据，执行如下代码，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fig, ax = plt.subplots(<span class="number">1</span>,<span class="number">3</span>,figsize=(<span class="number">30</span>,<span class="number">15</span>))</span><br><span class="line">sns.boxplot(x=<span class="string">'Pclass'</span>, y=<span class="string">'Fare'</span>, hue=<span class="string">'Survived'</span>, data=df_train , ax=ax[<span class="number">0</span>])</span><br><span class="line">sns.violinplot(x=<span class="string">'Pclass'</span>, y=<span class="string">'Age'</span>, hue=<span class="string">'Survived'</span> ,data=df_train, split=<span class="keyword">False</span> ,ax= ax[<span class="number">1</span>])</span><br><span class="line">sns.violinplot(x=<span class="string">'Sex'</span>, y=<span class="string">'Age'</span>,hue=<span class="string">'Survived'</span>, data=df_train, ax=ax[<span class="number">2</span>])</span><br><span class="line">sns.swarmplot(x=<span class="string">'Sex'</span>, y=<span class="string">'Age'</span>,hue=<span class="string">'Survived'</span>,data=df_train,dodge=<span class="keyword">True</span>, ax=ax[<span class="number">2</span>])</span><br><span class="line">sns.swarmplot(x=<span class="string">'Pclass'</span>, y=<span class="string">'Age'</span>,hue=<span class="string">'Survived'</span>,data=df_train,dodge=<span class="keyword">True</span>, ax=ax[<span class="number">1</span>])</span><br><span class="line">sns.swarmplot(x=<span class="string">'Pclass'</span>, y=<span class="string">'Fare'</span>,hue=<span class="string">'Survived'</span>,data=df_train,dodge=<span class="keyword">True</span>, ax=ax[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>图中可以看到不同,在不同类别下（是否存活、Pclass）特征<code>Fare</code>和<code>Age</code>会呈现出不同的分布情况，<code>Fare</code>的区分更为明显，特别是在<code>Pclass = 1</code>的情况下。另外，通过散点图<code>swarmplot()</code>我们也可以清晰的看到，整个特征的分布情况。<br><img src="http://pjb2s2j52.bkt.clouddn.com/box_voi_swarm.png" alt=""></p>
+<p>如果仅仅是想查看某一特征与最终预测分类之间的关系的话，可以将<code>hue</code>参数去掉，将参数<code>y</code>修改为预测label，如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(x=<span class="string">'Survived'</span>, y=<span class="string">'Fare'</span>, data=df_train , ax=ax[<span class="number">0</span>])</span><br></pre></td></tr></table></figure></p>
+<h5 id="概率密度函数Kde"><a href="#概率密度函数Kde" class="headerlink" title="概率密度函数Kde"></a>概率密度函数Kde</h5><p>如果单纯考虑某一特征，还有另外一种方法，就是使用概率密度图（针对连续值），此时可以根据预测变量的不同取值，画出不同取值情况下某一特征的概率密度函数，例如票价和年龄。曲线下边的面积表示概率值，从下边的图中可以明显看到，特征<code>Fare</code>取值较小的情况下，也就是票价较低的情况下，曲线下边的面积存活的要比不存活的小；同样可以看到年龄在<code>[20,30]</code>之间存活的概率还会变高，超过不存活的。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = sns.FacetGrid( df_train, hue = <span class="string">'Survived'</span>, aspect=<span class="number">4</span>)</span><br><span class="line">a.map(sns.kdeplot, <span class="string">'Age'</span>, shade= <span class="keyword">True</span> )</span><br><span class="line">a.set(xlim=(<span class="number">0</span> , df_train[<span class="string">'Age'</span>].max()))</span><br><span class="line">a.add_legend()</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://pjb2s2j52.bkt.clouddn.com/ked_age.png" alt=""><br><img src="http://pjb2s2j52.bkt.clouddn.com/ked_fare.png" alt=""></p>
+<h5 id="相关性与热力图heatmap"><a href="#相关性与热力图heatmap" class="headerlink" title="相关性与热力图heatmap"></a>相关性与热力图heatmap</h5><p>通过<code>Pandas</code>提供的计算相关系数的函数<code>corr()</code>得到不同特征之间的相关性。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = plt.figure(figsize = (<span class="number">10</span>, <span class="number">8</span>))</span><br><span class="line">sns.heatmap(df_train.corr(), annot = <span class="keyword">True</span>, fmt=<span class="string">'.2f'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://pjb2s2j52.bkt.clouddn.com/heatmap.png" alt=""></p>
+
       
     </div>
 
@@ -708,7 +734,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">1.</span> <span class="nav-text">数据预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#大致了解数据集"><span class="nav-number">1.1.</span> <span class="nav-text">大致了解数据集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据处理"><span class="nav-number">1.2.</span> <span class="nav-text">数据处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征工程"><span class="nav-number">2.</span> <span class="nav-text">特征工程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可视化工具"><span class="nav-number">2.1.</span> <span class="nav-text">可视化工具</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">1.</span> <span class="nav-text">数据预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#大致了解数据集"><span class="nav-number">1.1.</span> <span class="nav-text">大致了解数据集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据处理"><span class="nav-number">1.2.</span> <span class="nav-text">数据处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征工程"><span class="nav-number">2.</span> <span class="nav-text">特征工程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可视化工具"><span class="nav-number">2.1.</span> <span class="nav-text">可视化工具</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#箱形图-boxplot"><span class="nav-number">2.1.1.</span> <span class="nav-text">箱形图 boxplot()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#琴形图-violinplot"><span class="nav-number">2.1.2.</span> <span class="nav-text">琴形图 violinplot()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#概率密度函数Kde"><span class="nav-number">2.1.3.</span> <span class="nav-text">概率密度函数Kde</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#相关性与热力图heatmap"><span class="nav-number">2.1.4.</span> <span class="nav-text">相关性与热力图heatmap</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
